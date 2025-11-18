@@ -386,10 +386,94 @@
         }
 
         .infografia-img {
+    width: 50%; /* O el tamaño que elegiste */
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px auto; /* Cambia esto */
+    display: block; /* Agrega esto */
+}
+
+        /* Estilos para el reproductor de audio */
+        .audio-player-card {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-player {
+            text-align: center;
+        }
+
+        .audio-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .audio-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .audio-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .audio-progress {
             width: 100%;
+            margin: 15px 0;
+        }
+
+        .audio-progress progress {
+            width: 100%;
+            height: 8px;
             border-radius: 10px;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
+            border: none;
+        }
+
+        .audio-progress progress::-webkit-progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .audio-progress progress::-webkit-progress-value {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 10px;
+        }
+
+        .audio-progress progress::-moz-progress-bar {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 10px;
+        }
+
+        .audio-time {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .audio-note {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 15px;
+            font-style: italic;
         }
 
         @media (max-width: 768px) {
@@ -427,7 +511,6 @@
                     <div class="team-member">Carlos Rivera</div>
                     <div class="team-member">Paula Catherine Morantes Silva</div>
                 </div>
-                </div>
             </div>
         </header>
 
@@ -438,7 +521,7 @@
                 <button class="nav-btn" data-section="medication">💊 Medicamento</button>
                 <button class="nav-btn" data-section="structure">🧬 Estructura</button>
                 <button class="nav-btn" data-section="research">📚 Investigación</button>
-                <button class="nav-btn" data-section="physiotherapy">🏥 Fisioterapia</button>
+                <button class="nav-btn" data-section="physiotherapy">🏥 Profesiones</button>
                 <button class="nav-btn" data-section="conclusions">✅ Conclusiones</button>
                 <button class="nav-btn" data-section="references">📖 Referencias</button>
             </div>
@@ -448,12 +531,16 @@
         <div id="home" class="content-section active">
             <h2>🏠 Bienvenido a SalbuLife</h2>
             <div class="highlight">
-                <p>SalbuLife es una plataforma educativa desarrollada para explicar el funcionamiento, propiedades y aplicaciones del Salbutamol, un medicamento esencial en el manejo de enfermedades respiratorias como el asma y la EPOC. Nuestro objetivo es ofrecer una comprensión completa, clara y accesible sobre su composición, utilidad clínica y relevancia profesional. </p>
+                <p>SalbuLife es una plataforma educativa creada para explicar de manera sencilla y completa cómo funciona el Salbutamol, un medicamento fundamental en el tratamiento de enfermedades respiratorias como el asma y la EPOC.
+Nuestro objetivo es brindar información clara, accesible y profesional sobre su composición, utilidad clínica, mecanismo de acción y su importancia en el manejo seguro y eficaz de los síntomas respiratorios.
+Aquí encontrarás contenido organizado, confiable y pensado para ayudarte a comprender mejor este fármaco esencial en el área de la salud.</p>
             </div>
             
             <div class="mechanism-card">
                 <h3>⚡ Mecanismo de Acción</h3>
-                <p>El salbutamol actúa como agonista selectivo de los receptores β2-adrenérgicos ubicados en el músculo liso bronquial. Al activar estos receptores, aumenta los niveles de AMPc intracelular, lo que produce relajación del músculo liso y broncodilatación. Su efecto se inicia en 5-15 minutos y dura entre 4-6 horas.</p>
+                <p>El salbutamol actúa como un agonista selectivo de los receptores β2-adrenérgicos, los cuales se encuentran principalmente en el músculo liso de los bronquios.
+Cuando estos receptores son estimulados por el medicamento, aumentan los niveles de AMPc dentro de las células. Este aumento provoca que el músculo liso bronquial se relaje, lo que genera una broncodilatación rápida y eficaz.
+Gracias a este proceso, las vías respiratorias se abren, mejora el paso del aire y se reducen síntomas como la dificultad para respirar, la tos y el silbido. Su efecto suele comenzar entre 5 y 15 minutos después de administrarse y puede mantenerse durante 4 a 6 horas.</p>
             </div>
         </div>
 
@@ -471,7 +558,7 @@
             
             <h3>📋 Descripción del Medicamento</h3>
             <p>El salbutamol es un fármaco broncodilatador perteneciente al grupo de los agonistas β2-adrenérgicos de acción corta (SABA). Se utiliza principalmente para el tratamiento y prevención del broncoespasmo asociado al asma, enfermedad pulmonar obstructiva crónica (EPOC) y otras enfermedades respiratorias que cursan con obstrucción reversible de las vías aéreas.</p>
-        <p>Los grupos funcionales son partes de la molécula que determinan cómo actúa el medicamento dentro del cuerpo. En el caso del Salbutamol, estos grupos le permiten unirse a receptores específicos en los bronquios para producir broncodilatación. <p>
+            <p>Los grupos funcionales son partes de la molécula que determinan cómo actúa el medicamento dentro del cuerpo. En el caso del Salbutamol, estos grupos le permiten unirse a receptores específicos en los bronquios para producir broncodilatación.</p>
             
             <h3>📦 Presentaciones del Salbutamol</h3>
             <div class="presentations-grid">
@@ -538,6 +625,28 @@
                 <p><strong>Contraindicaciones:</strong> Hipersensibilidad al salbutamol, taquiarritmias, tirotoxicosis.</p>
                 <p><strong>Precauciones:</strong> Cardiopatía isquémica, hipertensión, diabetes mellitus, hipertiroidismo, embarazo y lactancia.</p>
                 <p><strong>Interacciones:</strong> β-bloqueadores (antagonismo), diuréticos (hipopotasemia), antidepresivos tricíclicos.</p>
+            </div>
+
+            <!-- REPRODUCTOR DE AUDIO -->
+            <div class="audio-player-card">
+                <h3>🎵 Audio Informativo sobre Salbutamol</h3>
+                <div class="audio-player">
+                    <audio id="salbutamolAudio">
+                        <source src="Salbulife.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <div class="audio-controls">
+                        <button id="playPauseBtn" class="audio-btn">▶️ Reproducir</button>
+                        <button id="stopBtn" class="audio-btn">⏹️ Detener</button>
+                        <span class="audio-time" id="currentTime">0:00</span>
+                        <span class="audio-time">/</span>
+                        <span class="audio-time" id="duration">0:00</span>
+                    </div>
+                    <div class="audio-progress">
+                        <progress id="progressBar" value="0" max="100"></progress>
+                    </div>
+                    <p class="audio-note">Audio explicativo sobre el uso correcto del Salbutamol</p>
+                </div>
             </div>
 
             <h3>🔬 Propiedades Fisicoquímicas</h3>
@@ -629,6 +738,7 @@
                 </div>
             </div>
 
+            
             <h3>🔍 Hibridación y Geometría Molecular</h3>
             <table class="properties-table">
                 <thead>
@@ -692,14 +802,14 @@
             <h2>📚 Recursos de Investigación</h2>
             
             <div class="article-card">
-                <div class="article-title">📄 Artículo 1: Unraveling the impact of salbutamol polytherapy: Clinically relevant drug–drug interactions. </div>
-                <p><strong>Objetivo:</strong> Describir un ensayo clínico aleatorizado que investiga el uso combinado de estimulación eléctrica funcional (FES) y salbutamol en pacientes con lesión medular, con el fin de promover hipertrofia muscular, mejorar la función metabólica y reducir riesgos cardiometabólicos. </p>
+                <div class="article-title">📄 Artículo 1: Unraveling the impact of salbutamol polytherapy: Clinically relevant drug–drug interactions.</div>
+                <p><strong>Objetivo:</strong> Describir un ensayo clínico aleatorizado que investiga el uso combinado de estimulación eléctrica funcional (FES) y salbutamol en pacientes con lesión medular, con el fin de promover hipertrofia muscular, mejorar la función metabólica y reducir riesgos cardiometabólicos.</p>
                 
                 <p><strong>Metodología:</strong> Ensayo clínico aleatorizado con 32 participantes con lesión medular completa. La intervención consistió en 16 semanas de FES-ciclismo combinada con administración de salbutamol.</p>
                 
-                 <p><strong>Resultados:</strong> La combinación de FES (Estimulación Eléctrica Funcional) y salbutamol mejora la hipertrofia y la función metabólica en pacientes con lesión medular, pero puede causar efectos secundarios que requieren ajustar la intensidad del ejercicio. </p>
+                 <p><strong>Resultados:</strong> La combinación de FES (Estimulación Eléctrica Funcional) y salbutamol mejora la hipertrofia y la función metabólica en pacientes con lesión medular, pero puede causar efectos secundarios que requieren ajustar la intensidad del ejercicio.</p>
 
-                 <p><strong>Conclusión:</strong> El uso de salbutamol junto con otras intervenciones terapéuticas puede generar efectos secundarios como temblores, taquicardia o fatiga muscular, lo que demanda que el fisioterapeuta ajuste cuidadosamente la intensidad de los ejercicios para garantizar seguridad y efectividad en programas de rehabilitación física y respiratoria. <p>
+                 <p><strong>Conclusión:</strong> El uso de salbutamol junto con otras intervenciones terapéuticas puede generar efectos secundarios como temblores, taquicardia o fatiga muscular, lo que demanda que el fisioterapeuta ajuste cuidadosamente la intensidad de los ejercicios para garantizar seguridad y efectividad en programas de rehabilitación física y respiratoria.</p>
 
                 <div class="physiotherapy-impact">
                     <h4>💡 Impacto en Fisioterapia:</h4>
@@ -712,14 +822,14 @@
             </div>
 
             <div class="article-card">
-                <div class="article-title">📄 Artículo 2: Comparative efficacy of nebulized versus metered-dose inhaler salbutamol in pediatric asthma exacerbations: A randomized controlled trial. </div>
+                <div class="article-title">📄 Artículo 2: Comparative efficacy of nebulized versus metered-dose inhaler salbutamol in pediatric asthma exacerbations: A randomized controlled trial.</div>
                 <p><strong>Objetivo:</strong> Evaluar la eficacia relativa del salbutamol en presentación de inhalador de dosis medida versus nebulización en el tratamiento del asma aguda en niños.</p>
                 
                 <p><strong>Metodología:</strong> Estudio prospectivo, aleatorizado, que incluyó a 120 niños entre 5-12 años con exacerbación asmática aguda. Se compararon los cambios en el score clínico y saturación de oxígeno a los 20, 40 y 60 minutos.</p>
                 
                 <p><strong>Resultados:</strong> No se encontraron diferencias significativas en la mejoría clínica entre ambos grupos, sugiriendo que el inhalador con espaciador es tan efectivo como la nebulización en el manejo del asma aguda leve a moderada en niños.</p>
                 
-                <p><strong>Conclusión:</strong>El inhalador de dosis medida con espaciador constituye una alternativa terapéutica igual de eficaz que la nebulización y más práctica en contextos ambulatorios, favoreciendo la adherencia y facilitando intervenciones de fisioterapia respiratoria en casa y consultorio.  <p>
+                <p><strong>Conclusión:</strong>El inhalador de dosis medida con espaciador constituye una alternativa terapéutica igual de eficaz que la nebulización y más práctica en contextos ambulatorios, favoreciendo la adherencia y facilitando intervenciones de fisioterapia respiratoria en casa y consultorio.</p>
 
                 <div class="physiotherapy-impact">
                     <h4>💡 Impacto en Fisioterapia:</h4>
@@ -732,9 +842,9 @@
             </div>
         </div>
 
-        <!-- Subpágina 5: Fisioterapia -->
+       <!-- Subpágina 5: Profesiones -->
 <div id="physiotherapy" class="content-section">
-    <h2>🏥 Aplicación Profesional en Fisioterapia</h2>
+    <h2>🏥 Profesiones</h2>
     
     <div class="highlight">
         <h3>🫁 Fisioterapia Respiratoria y Salbutamol</h3>
@@ -763,32 +873,194 @@
         </div>
     </div>
 
-    <!-- AQUÍ VA LA SECCIÓN CORREGIDA DE INGENIERÍA BIOMÉDICA -->
-    <div class="article-card">
-        <h3>🔧 Ingeniería Biomédica</h3>
+    <div class="physiotherapy-impact">
+        <h3>🎯 Protocolo de Administración en Fisioterapia</h3>
+        <p><strong>Pre-tratamiento:</strong> Administrar salbutamol 15-30 minutos antes de la sesión de fisioterapia respiratoria.</p>
+        <p><strong>Monitoreo:</strong> Evaluar frecuencia cardíaca, saturación de oxígeno y presencia de temblor antes, durante y después del tratamiento.</p>
+        <p><strong>Contraindicaciones relativas:</strong> Suspender ejercicios si FC > 120 lpm, temblor severo o disnea aumentada.</p>
+    </div>
+
+    <!-- SECCIÓN DE INGENIERÍA BIOMÉDICA EN AZUL -->
+    <div style="background: #e3f2fd; border: 3px solid #2196F3; border-radius: 15px; padding: 30px; margin: 25px 0; box-shadow: 0 5px 20px rgba(33, 150, 243, 0.2);">
+        <h3 style="color: #1565C0; margin-bottom: 20px; font-size: 1.8rem;">🔧 Relación Profesional: Ingeniería Biomédica</h3>
         
-        <div class="highlight">
-            <h4>💨 Diseño y funcionamiento de dispositivos inhaladores</h4>
-            <p><strong>Los ingenieros analizan:</strong></p>
-            <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li>El flujo del aerosol</li>
-                <li>La presión interna</li>
-                <li>El tamaño de la partícula</li>
-                <li>El mecanismo de válvula</li>
-                <li>Los sistemas de dosificación</li>
-            </ul>
+        <p style="color: #1976D2; margin-bottom: 20px; font-size: 1.1rem; line-height: 1.6;">
+            Dentro de la Ingeniería Biomédica, el Salbutamol está estrechamente relacionado con:
+        </p>
+
+        <div style="margin-bottom: 25px;">
+            <h4 style="color: #1976D2; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+                <span style="background: #2196F3; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.9rem;">✔</span>
+                Diseño y funcionamiento de dispositivos inhaladores
+            </h4>
+            
+            <p style="color: #1565C0; margin-bottom: 10px; font-weight: bold;">Los ingenieros analizan:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0;">
+                <div style="background: rgba(33, 150, 243, 0.1); padding: 12px; border-radius: 8px; text-align: center;">
+                    <p style="color: #1565C0; margin: 0; font-size: 0.95rem;">🌬️ El flujo del aerosol</p>
+                </div>
+                <div style="background: rgba(33, 150, 243, 0.1); padding: 12px; border-radius: 8px; text-align: center;">
+                    <p style="color: #1565C0; margin: 0; font-size: 0.95rem;">📊 La presión interna</p>
+                </div>
+                <div style="background: rgba(33, 150, 243, 0.1); padding: 12px; border-radius: 8px; text-align: center;">
+                    <p style="color: #1565C0; margin: 0; font-size: 0.95rem;">🔬 El tamaño de partícula</p>
+                </div>
+                <div style="background: rgba(33, 150, 243, 0.1); padding: 12px; border-radius: 8px; text-align: center;">
+                    <p style="color: #1565C0; margin: 0; font-size: 0.95rem;">⚙️ El mecanismo de válvula</p>
+                </div>
+                <div style="background: rgba(33, 150, 243, 0.1); padding: 12px; border-radius: 8px; text-align: center;">
+                    <p style="color: #1565C0; margin: 0; font-size: 0.95rem;">💊 Los sistemas de dosificación</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="highlight">
-            <h4>⚙️ Optimización del rendimiento farmacéutico</h4>
-            <p>Comprender las propiedades fisicoquímicas permite diseñar inhaladores más eficientes. Los biomédicos garantizan que el medicamento mantenga sus propiedades químicas durante toda su vida útil.</p>
+
+        <div>
+            <h4 style="color: #1976D2; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+                <span style="background: #2196F3; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.9rem;">✔</span>
+                Optimización del rendimiento farmacéutico
+            </h4>
+            
+            <p style="color: #1565C0; line-height: 1.6; font-size: 1rem;">
+                Comprender las propiedades fisicoquímicas permite diseñar inhaladores más eficientes. 
+                Los biomédicos garantizan que el medicamento mantenga sus propiedades químicas durante 
+                toda su vida útil.
+            </p>
         </div>
     </div>
 
+    <!-- EXPLICACIÓN DE CONEXIÓN CON INGENIERÍA BIOMÉDICA -->
+    <div style="background: linear-gradient(135deg, #bbdefb, #90caf9); border: 2px solid #1976D2; border-radius: 12px; padding: 25px; margin: 20px 0; box-shadow: 0 4px 15px rgba(25, 118, 210, 0.15);">
+        <h4 style="color: #0D47A1; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+            🔗 Conexión entre Ingeniería Biomédica y Salbutamol
+        </h4>
+        
+        <p style="color: #1565C0; line-height: 1.6; font-size: 1rem; margin-bottom: 15px;">
+            La Ingeniería Biomédica se conecta con el salbutamol porque este medicamento requiere 
+            <strong>dispositivos especializados</strong> y <strong>métodos de control fisiológico</strong> 
+            para asegurar que funcione correctamente.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0;">
+            <div style="background: rgba(255, 255, 255, 0.3); padding: 15px; border-radius: 8px; border-left: 4px solid #1976D2;">
+                <p style="color: #0D47A1; margin: 0; font-weight: bold;">🎯 Diseño y Desarrollo</p>
+                <p style="color: #1565C0; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Los ingenieros biomédicos se encargan de diseñar, probar y mejorar las tecnologías que administran el salbutamol.
+                </p>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.3); padding: 15px; border-radius: 8px; border-left: 4px solid #1976D2;">
+                <p style="color: #0D47A1; margin: 0; font-weight: bold;">📊 Evaluación Fisiológica</p>
+                <p style="color: #1565C0; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Evalúan cómo responde el cuerpo durante y después de su uso mediante monitoreo clínico.
+                </p>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.3); padding: 15px; border-radius: 8px; border-left: 4px solid #1976D2;">
+                <p style="color: #0D47A1; margin: 0; font-weight: bold;">🔬 Integración Multidisciplinaria</p>
+                <p style="color: #1565C0; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Combina conocimiento de fisiología respiratoria, diseño de dispositivos médicos y biomecánica del flujo de aire.
+                </p>
+            </div>
+        </div>
+        
+        <p style="color: #1565C0; line-height: 1.6; font-size: 1rem; font-style: italic; margin-top: 15px;">
+            Esta relación sinérgica garantiza que el salbutamol sea administrado de manera óptima, 
+            maximizando su eficacia terapéutica mientras se minimizan los efectos adversos.
+        </p>
+    </div>
+
+    <!-- NUEVA SECCIÓN: DISEÑO Y OPTIMIZACIÓN DE DISPOSITIVOS INHALADOS -->
+    <div style="background: linear-gradient(135deg, #e1f5fe, #b3e5fc); border: 2px solid #0288D1; border-radius: 12px; padding: 25px; margin: 20px 0; box-shadow: 0 4px 15px rgba(2, 136, 209, 0.15);">
+        <h4 style="color: #01579B; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+            🎨 Diseño y Optimización de Dispositivos Inhalados
+        </h4>
+        
+        <p style="color: #0277BD; line-height: 1.6; font-size: 1rem; margin-bottom: 15px;">
+            El salbutamol se administra sobre todo por vía inhalada, por lo que los ingenieros biomédicos 
+            desempeñan un papel clave en la creación de los dispositivos que lo entregan.
+        </p>
+        
+        <p style="color: #0277BD; margin-bottom: 15px; font-weight: bold;">Ellos estudian y optimizan elementos como:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 20px 0;">
+            <div style="background: rgba(2, 136, 209, 0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #81D4FA;">
+                <p style="color: #01579B; margin: 0; font-weight: bold;">🔬 Tamaño de partícula</p>
+                <p style="color: #0277BD; margin: 5px 0 0 0; font-size: 0.9rem;">Óptimo para penetración pulmonar</p>
+            </div>
+            
+            <div style="background: rgba(2, 136, 209, 0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #81D4FA;">
+                <p style="color: #01579B; margin: 0; font-weight: bold;">🌪️ Flujo y velocidad del aerosol</p>
+                <p style="color: #0277BD; margin: 5px 0 0 0; font-size: 0.9rem;">Control preciso de distribución</p>
+            </div>
+            
+            <div style="background: rgba(2, 136, 209, 0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #81D4FA;">
+                <p style="color: #01579B; margin: 0; font-weight: bold;">🛠️ Materiales del dispositivo</p>
+                <p style="color: #0277BD; margin: 5px 0 0 0; font-size: 0.9rem;">Compatibilidad y durabilidad</p>
+            </div>
+            
+            <div style="background: rgba(2, 136, 209, 0.1); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #81D4FA;">
+                <p style="color: #01579B; margin: 0; font-weight: bold;">🫁 Integración con la respiración</p>
+                <p style="color: #0277BD; margin: 5px 0 0 0; font-size: 0.9rem;">Sincronización con el paciente</p>
+            </div>
+        </div>
+        
+        <p style="color: #0277BD; line-height: 1.6; font-size: 1rem; background: rgba(255, 255, 255, 0.5); padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <strong>🎯 Resultado:</strong> Esto permite que el salbutamol llegue de forma eficiente al sistema 
+            respiratorio y cumpla su función broncodilatadora.
+        </p>
+    </div>
+
+    <!-- NUEVA SECCIÓN: EVALUACIÓN DE DESEMPEÑO Y VALIDACIÓN -->
+    <div style="background: linear-gradient(135deg, #e8f5e8, #c8e6c9); border: 2px solid #388E3C; border-radius: 12px; padding: 25px; margin: 20px 0; box-shadow: 0 4px 15px rgba(56, 142, 60, 0.15);">
+        <h4 style="color: #1B5E20; margin-bottom: 15px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px;">
+            ✅ Evaluación de Desempeño y Validación del Dispositivo
+        </h4>
+        
+        <p style="color: #2E7D32; line-height: 1.6; font-size: 1rem; margin-bottom: 15px;">
+            Antes de aprobar un inhalador o nebulizador para uso clínico, los ingenieros biomédicos 
+            realizan pruebas rigurosas para garantizar su efectividad y seguridad.
+        </p>
+        
+        <p style="color: #2E7D32; margin-bottom: 15px; font-weight: bold;">Pruebas realizadas incluyen:</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; margin: 20px 0;">
+            <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #388E3C;">
+                <p style="color: #1B5E20; margin: 0; font-weight: bold;">🌫️ Estudios de dispersión del aerosol</p>
+                <p style="color: #2E7D32; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    En cámaras de simulación de vías respiratorias
+                </p>
+            </div>
+            
+            <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #388E3C;">
+                <p style="color: #1B5E20; margin: 0; font-weight: bold;">📏 Medición de dosis real</p>
+                <p style="color: #2E7D32; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Cantidad exacta que llega al paciente
+                </p>
+            </div>
+            
+            <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #388E3C;">
+                <p style="color: #1B5E20; margin: 0; font-weight: bold;">💨 Pruebas de flujo en crisis</p>
+                <p style="color: #2E7D32; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Bajo diferentes condiciones (pacientes con crisis asmática)
+                </p>
+            </div>
+            
+            <div style="background: rgba(76, 175, 80, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid #388E3C;">
+                <p style="color: #1B5E20; margin: 0; font-weight: bold;">🛡️ Ensayos de durabilidad y seguridad</p>
+                <p style="color: #2E7D32; margin: 5px 0 0 0; font-size: 0.9rem;">
+                    Exactitud de dosis y seguridad de componentes
+                </p>
+            </div>
+        </div>
+        
+        <p style="color: #2E7D32; line-height: 1.6; font-size: 1rem; background: rgba(255, 255, 255, 0.5); padding: 15px; border-radius: 8px; margin-top: 15px;">
+            <strong>🎯 Objetivo:</strong> Esto garantiza que el equipo proporcione la cantidad correcta de salbutamol 
+            y que funcione adecuadamente en situaciones reales.
+        </p>
     </div>
 </div>
 
-        
         <!-- Conclusiones -->
         <div id="conclusions" class="content-section">
             <h2>✅ Conclusiones</h2>
@@ -908,9 +1180,9 @@
             });
         }
 
-        // Event listeners para los botones
+        // Controlador del reproductor de audio
         document.addEventListener('DOMContentLoaded', function() {
-            // Agregar event listeners a todos los botones
+            // Agregar event listeners a todos los botones de navegación
             const navButtons = document.querySelectorAll('.nav-btn');
             navButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -921,8 +1193,73 @@
             
             // Activar la sección de inicio por defecto
             showSection('home');
+
+            // Controlador del reproductor de audio
+            const audio = document.getElementById('salbutamolAudio');
+            const playPauseBtn = document.getElementById('playPauseBtn');
+            const stopBtn = document.getElementById('stopBtn');
+            const progressBar = document.getElementById('progressBar');
+            const currentTime = document.getElementById('currentTime');
+            const duration = document.getElementById('duration');
+
+            // Formatear tiempo en minutos:segundos
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+
+            // Actualizar la barra de progreso y tiempos
+            function updateProgress() {
+                if (audio.duration) {
+                    const progress = (audio.currentTime / audio.duration) * 100;
+                    progressBar.value = progress;
+                    currentTime.textContent = formatTime(audio.currentTime);
+                }
+            }
+
+            // Actualizar duración total cuando esté disponible
+            audio.addEventListener('loadedmetadata', function() {
+                duration.textContent = formatTime(audio.duration);
+            });
+
+            // Actualizar progreso continuamente
+            audio.addEventListener('timeupdate', updateProgress);
+
+            // Controlar botón play/pause
+            playPauseBtn.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    playPauseBtn.innerHTML = '⏸️ Pausar';
+                } else {
+                    audio.pause();
+                    playPauseBtn.innerHTML = '▶️ Reproducir';
+                }
+            });
+
+            // Controlar botón stop
+            stopBtn.addEventListener('click', function() {
+                audio.pause();
+                audio.currentTime = 0;
+                playPauseBtn.innerHTML = '▶️ Reproducir';
+                progressBar.value = 0;
+                currentTime.textContent = '0:00';
+            });
+
+            // Reiniciar controles cuando termine el audio
+            audio.addEventListener('ended', function() {
+                playPauseBtn.innerHTML = '▶️ Reproducir';
+                progressBar.value = 0;
+                currentTime.textContent = '0:00';
+            });
+
+            // Permitir hacer clic en la barra de progreso para saltar
+            progressBar.addEventListener('click', function(e) {
+                const rect = progressBar.getBoundingClientRect();
+                const pos = (e.clientX - rect.left) / rect.width;
+                audio.currentTime = pos * audio.duration;
+            });
         });
     </script>
 </body>
 </html>
-
